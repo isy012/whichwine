@@ -1,19 +1,63 @@
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Which Wine?</h1>
-        <tr>
-          <h3>Winos</h3>
-          <% @user.each do |user| %>
-          <tr>
-            <td><%= user.name %></td>
-            <td><%= user.email %></td>
-            <td><%= link_to 'More', user_path(user.id) %></td>
-            <p><p>
-          </tr>
-          <% end %>
-        </tr>
-        <p>
-        <p>
-          <a class="btn btn-primary btn-lg">Get Me Started &raquo;</a></p>
+<div class="container">
+  <div class="starter-template">
+    <!--
+    <p class="lead">
+            Ahoy, <% if current_user %><%= current_user.name %>
+            <% else %>
+            mate.
+            <% end %>
+          </p>
+        -->
+  <h1>95% of wine tasters <p><p>can't tell good from bad wine.</h1>
+  <br><br>
+
+<div class="row">
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="http://blog.worldlabel.com/wp-content/myfiles/2009/03/wine-label.png" height="30%" width="30%">
+      <div class="caption">
+        <h3>Prize Winning?</h3>
+        <p><a href="#" class="btn btn-primary">Yes</a> <a href="#" class="btn btn-default">No</a></p>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="http://mycleaninglady.us/wp-content/uploads/2013/03/Cat-cats-32958715-1440-900.jpg" height="90%" width="90%">
+      <div class="caption">
+        <h3>CATS</h3>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="jumbotron">
+          <h3>Original Winos</h3>
+          <% @user.each do |user| %>
+            <%= user.name %> | 
+            <%= user.email %> 
+            <%= link_to 'More', user_path(user.id) %>
+            <p>
+          <% end %>
+        <p>
+          <a class="btn btn-primary btn-lg">Get Me Started &raquo;</a></p>
+  </div>
+
+  <div class="row">
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      
+      <div class="caption">
+        <h3>About</h3>
+       <p>Did you know Which Wine? was born out of a hackathon at 3AM? In the middle of the night, we were inspired to hack around a fun idea. We regular folks still buy wine  by pretty labels and bottling. Based on your own preferences and choices, Which Wine is a new experience that helps you become smarter about yourself. Part social-proof, part data science, Which Wine discovers what you like.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

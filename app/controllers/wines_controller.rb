@@ -32,9 +32,10 @@ def edit
 end
 
 def update 
+@user = User.find(params[:user_id])
 @wine = Wine.find(params[:id])
 if @wine.update(params[:wine].permit(:title, :text, :vineyard, :year))
-redirect_to @wine
+redirect_to action: :index, id: @user.id
 else
 render 'edit'
 end

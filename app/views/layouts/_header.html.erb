@@ -4,15 +4,14 @@
     <nav>
         <ul class="nav pull-right">
           <li><%= link_to "Home", users_path %></li>
-          <li><%= link_to "Wines", users_path %></li>
           <li>
-            <% if current_user %>
-            <%= current_user.name %>
+            <% if current_user %><%= current_user.name %>
             <%= link_to "Sign out", signout_path, id: "sign_out" %>
             <% else %>
             <%= link_to "Sign in with FB", "/auth/facebook", id: "sign_in" %>
             <% end %>
           </li>
+          <li><%= link_to "About", users_path %></li>
         </ul>
       </nav>
     </div>
