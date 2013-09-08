@@ -1,20 +1,19 @@
     <div class="jumbotron">
       <div class="container">
-        <h1>Which wine</h1>
-        <p>Winos</p>
-        <p><% @user.each do |user| %>
-    <tr>
-      <td><%= user.id %></td>
-      <td><%= user.email %></td>
-      <td><%= link_to 'More', user_path(user.id) %></td>
-    </tr>
-  <% end %>
-  <p>
-        <p><a class="btn btn-primary btn-lg">Get Me Started &raquo;</a></p>
+        <h1>Which Wine?</h1>
+        <tr>
+          <h3>Winos</h3>
+          <% @user.each do |user| %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= link_to 'More', user_path(user.id) %></td>
+            <p><p>
+          </tr>
+          <% end %>
+        </tr>
+        <p>
+        <p>
+          <a class="btn btn-primary btn-lg">Get Me Started &raquo;</a></p>
       </div>
     </div>
-
-
-
-
-

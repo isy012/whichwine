@@ -4,7 +4,7 @@ def new
 end
 
 def create 
-@user = User.new(params[:user].permit(:email))
+@user = User.new(params[:user].permit(:name, :email))
 if @user.save 
 redirect_to action: :show, id: @user.id
 else 
@@ -18,6 +18,19 @@ end
 
 def index
 @user = User.all
+end
+
+def edit
+@user = User.find(params[:id])
+end
+
+def update 
+@user = User.find(params[:id])
+if @user.update(params[:user].permit(:name, :email))
+redirect_to @user
+else
+render 'edit'
+end
 end
 
 end

@@ -10,18 +10,20 @@
     <th></th>
     <th></th>
   </tr>
-<% @user.wines.each do |wine| %>
+    <% @user.wines.each do |wine| %>
     <tr>
     <td><%= wine.title %></td>
     <td><%= wine.vineyard %></td>
     <td><%= wine.year %></td>      
     <td><%= link_to 'Notes', user_wine_path(wine.user_id, wine.id) %></td>
     <td><%= link_to 'Edit', edit_user_wine_path(wine.user_id, wine.id) %></td>
-    </tr>
+  </tr>
 
   </tr>
 <% end %>
 </table>
+<p><p>
+<%= link_to 'Back', users_path %>
 <div>
 <h3>Add Wine:</h3>
 <%= form_for([@user, @user.wines.build]) do |f| %>
@@ -29,31 +31,20 @@
     <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
-  </p>
- 
-  <p>
     <%= f.label :Notes %><br>
     <%= f.text_area :text %>
-  </p>
-
-    <p>
     <%= f.label :Vineyard %><br>
     <%= f.text_field :vineyard %>
-  </p>
-
-    <p>
     <%= f.label :Year %><br>
     <%= f.number_field :year %>
-  </p>
+</p>
 
 </div>
+    <%= f.submit %>
 </div>
  
-  <p>
-    <%= f.submit %>
-  </p>
 
   <% end %>
 </div>
 
-<%= link_to 'Back', users_path %>
+
