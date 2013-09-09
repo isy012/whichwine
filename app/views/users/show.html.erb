@@ -5,24 +5,33 @@
 
 <table cellspacing="0">
   <tr>
-    <th>Wine</th>
-    <th>Vineyard</th>
-    <th>Year</th>
-    <th></th>
-    <th></th>
+
   </tr>
     <% @user.wines.each do |wine| %>
     <tr>
-    <td><%= wine.title %></td>
-    <td><%= wine.vineyard %></td>
-    <td><%= wine.year %></td>      
+    <td>Type: <%= wine.title %> <%= link_to 'Edit', edit_user_wine_path(wine.user_id, wine.id)%><p>
+    Vineyard:<%= wine.vineyard %><p>
+    Year: <%= wine.year %>
+  </td>      
+    <!--
     <td><%= link_to 'Notes', user_wine_path(wine.user_id, wine.id) %></td>
     <td><%= link_to 'Edit', edit_user_wine_path(wine.user_id, wine.id) %></td>
-  </tr>
 
+  -->
+  </tr>
+  <tr>
+      <td>Notes: <%= wine.text %><p>    
+      </td>
+  </tr>
+  <tr>
+    <td>
+    <br>
+<iframe width="150" height="150" frameborder="1" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?q=<%= wine.vineyard %>&amp;output=embed&amp;iwloc=near"></iframe><p><br><br>
+</td>
   </tr>
 <% end %>
 </table>
+
 <p><p>
 <%= link_to 'Back', users_path %>
 <div>
