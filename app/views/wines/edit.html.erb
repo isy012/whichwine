@@ -1,3 +1,6 @@
+ <div class="container">
+
+
 <h3>Editing Wine Tasting Note</h3>
  
 <%= form_for :wine, url: user_wine_path(@wine.user.id, @wine.id), method: :patch do |f| %>
@@ -39,3 +42,4 @@
 <% end %>
  
 <%= link_to 'Back', user_wines_path %>
+</div>
