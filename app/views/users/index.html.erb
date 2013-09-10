@@ -1,19 +1,25 @@
 <div class="container">
   <div class="starter-template">
-    <!--
+    
     <p class="lead">
-            Ahoy, <% if current_user %><%= current_user.name %>
+            Ahoy, <% if current_user %><%= current_user.name %><p><%= image_tag(current_user.profile_url) %>
             <% else %>
             mate.
             <% end %>
           </p>
-        -->
-  <h1>95% of wine tasters <p><p>can't tell good from bad wine.</h1>
+        
+  <h1>Fact: 95% of wine tasters <p><p>can't tell good from bad wine.</h1>
   <br><br>
 
+<div class="jumbotron">
+ Everyone knows the most relevant recommendations are from your friends. Our mission is to help you discover great new experiences based on everything from books to electronic gadgets to fashion or vacation spots. We combine algorithmic machine learning with user-curated content, with the goal of providing better, personalized recommendations for everyone.
+
+WW was borne out of a <%= link_to "hackathon", "http://2013f.pennapps.com" %> among great minds who were exploring how machine learning could be used to provide smart, highly-customized recommendations.
+
+</div>
 
   <div class="jumbotron">
-          <h3>Winos</h3>
+          <h3>Winos using WW</h3>
           <% @user.each do |user| %>
             <%= user.name %> | 
             <%= user.email %> 
@@ -21,7 +27,7 @@
             <p>
           <% end %>
         <p>
-          <a class="btn btn-primary btn-lg">OK Get Me Started &raquo;</a></p>
+          <a class="btn btn-primary btn-lg" href="users">OK Get Me Started &raquo;</a></p>
   </div>
 
   
