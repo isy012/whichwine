@@ -1,6 +1,6 @@
 Whichwine::Application.routes.draw do
 
-resources :vineyards
+#resources :vineyards
 resources :users do
   resources :wines
 end
