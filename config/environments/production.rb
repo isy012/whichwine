@@ -78,7 +78,7 @@ Whichwine::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  FACEBOOK_APP_ID = '1415045145375144'
-  FACEBOOK_SECRET = 'cbd8b38d6888cfbab70c643d9ac0ea02'
+  FACEBOOK_APP_ID = '655788571112633'
+  FACEBOOK_SECRET = '086e5d8138400bc08e22e207a6d9f287'
   
 end
