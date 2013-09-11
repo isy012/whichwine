@@ -2,26 +2,24 @@
   <div class="starter-template">
     
     <p class="lead">
-            Ahoy, <% if current_user %><%= current_user.name %><p><%= image_tag(current_user.profile_url) %>
+            <% if current_user %>Oh hey, 
+            <%= current_user.name %><p><%= image_tag(current_user.profile_url) %>
             <% else %>
-            mate.
+            
             <% end %>
           </p>
         
-  <h1>95% of wine tasters <p><p>can't tell good from bad wine.</h1>
+  <%= image_tag('flavorful.png') %>
   <br><br>
 
 <div class="jumbotron">
- Everyone knows the most relevant recommendations are from your friends. Flavorful's mission is to help you discover new things based on everything from books to behavioral science to fashion or vacation spots. We combine algorithmic machine learning with beautifully curated content, with the goal of providing better, personalized recommendations for everyone. <p><p>
+ Create your own flavor profile.* <p><p>
       
           <a class="btn btn-primary btn-lg" href="#">Request an Invite &raquo;</a>
 </div>
 
-
-<div class="jumbotron">
-<h3>About</h3>
-Flavorful </a> was borne out of a <%= link_to "hackathon", "http://2013f.pennapps.com" %> among great minds who were exploring how machine learning could be used to provide smart, highly-customized recommendations. 
-
+<div class="jumbotron" >
+*Flavorful's mission is to help people discover more of what they like based on everything that is unique about them. We combine algorithmic machine learning with beautifully user-curated content, with the ultimate goal of providing better, personalized recommendations for all.
 </div>
   
 
