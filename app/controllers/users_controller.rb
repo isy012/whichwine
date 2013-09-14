@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
 def new
+
 end
 
 def create 
@@ -17,7 +18,13 @@ def show
 end
 
 def index
+if params[:search]
+@user = User.search(params[:search])
+else
+
 @user = User.all
+end
+
 end
 
 def edit

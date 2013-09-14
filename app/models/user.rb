@@ -12,5 +12,9 @@ def self.from_omniauth(auth)
       user.save!
     end
   end
-  
+
+def self.search(search)
+  search.present? and all(:conditions => [ 'name LIKE ?', "%#{search.strip}%" ])
+end
+
 end

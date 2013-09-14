@@ -6,7 +6,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Flavorful</a>
+
+
+
+
+
+          <div class="navbar-brand">
+            <% if current_user %>
+            <%= link_to "Profile", users_path(current_user) %>
+             <% else %>
+             <%= link_to "Flavorful", users_path %>
+            <% end %>
+          </div>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">

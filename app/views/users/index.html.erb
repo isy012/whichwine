@@ -13,14 +13,33 @@
   <br><br>
 
 <div class="jumbotron">
- Create your own flavor profile.* <p><p>
+ Discover your own flavor* <p><p>
       
-          <a class="btn btn-primary btn-lg" href="#">Request an Invite &raquo;</a>
+<%= form_for :subscription, url: subscriptions_path do |f| %>
+  <p>
+    <%= f.text_field :email, placeholder: "Email" %>
+  </p>
+ <!--  <%= f.submit "Sign Up" %> -->
+
+
+   <%= button_to('Request Inivte', subscriptions_path, :class => 'btn btn-primary btn-lg')  %>
+<% end %>
+
+         <!-- <a class="btn btn-primary btn-lg" href="#">Request an Invite &raquo;</a> -->
 </div>
 
 <div class="jumbotron" >
-*Flavorful's mission is to help people discover more of what they like based on everything that is unique about them. We combine algorithmic machine learning with beautifully user-curated content, with the ultimate goal of providing better, personalized recommendations for all.
+*Flavorful's mission is to help people discover more of what they like based on everything that is unique about them. We combine algorithmic machine learning with beautifully user-curated content, with the ultimate goal of learning more about yourself.
 </div>
-  
+<!--
+<div class="jumbotron">
+<%= form_tag(users_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Users" %>
+<%= submit_tag "Search", :name => nil %>
 
+<% @user.each do |user| %>  
+  <p><%= link_to "#{user.name}", user %></p>
+  <% end %>
+<% end %>
 </div>
+-->

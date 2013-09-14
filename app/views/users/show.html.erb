@@ -7,53 +7,29 @@
   <tr>
 
   </tr>
-    <% @user.wines.each do |wine| %>
-    <tr>
-    <td>Type: <%= wine.title %> <%= link_to 'Edit', edit_user_wine_path(wine.user_id, wine.id)%><p>
-    Vineyard:<%= wine.vineyard %><p>
-    Year: <%= wine.year %>
-  </td>      
-    <!--
-    <td><%= link_to 'Notes', user_wine_path(wine.user_id, wine.id) %></td>
-    <td><%= link_to 'Edit', edit_user_wine_path(wine.user_id, wine.id) %></td>
-
-  -->
-  </tr>
   <tr>
-      <td>Notes: <%= wine.text %><p>    
-      </td>
-  </tr>
-  <tr>
+    <td>Type</td>
+    <td>Vineyard</td>
+    <td>Year</td>
+    <td>Notes</td>
     <td>
-    <br>
-<iframe width="150" height="150" frameborder="1" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?q=<%= wine.vineyard %>&amp;output=embed&amp;iwloc=near"></iframe><p><br><br>
-</td>
+  </tr>
+    <% @user.wines.each do |wine| %>
+  <tr>
+    <td><%= wine.title %> </td>
+    <td><%= wine.vineyard %></td>
+    <td><%= wine.year %></td>  
+    <td><%= wine.text %></td>
+    <td><%= link_to 'View', user_wine_path(wine.user_id, wine.id) %> | <%= link_to 'Edit', edit_user_wine_path(wine.user_id, wine.id)%></td>
   </tr>
 <% end %>
+
 </table>
 
+
 <p><p>
-<%= link_to 'Back', users_path %>
-<div>
-<h3>Add Wine:</h3>
-<%= form_for([@user, @user.wines.build]) do |f| %>
-
-    <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-    <%= f.label :Notes %><br>
-    <%= f.text_area :text %>
-    <%= f.label :Vineyard %><br>
-    <%= f.text_field :vineyard %>
-    <%= f.label :Year %><br>
-    <%= f.number_field :year %>
-</p>
-
-</div>
-    <%= f.submit %>
-</div>
- 
-  <% end %>
+<%= link_to 'Back', users_path %> | 
+<%= link_to 'Add Wine', new_user_wine_path(@user.id) %>
 
 
   <!-- google analytics --> 

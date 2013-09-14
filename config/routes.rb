@@ -1,6 +1,8 @@
 Whichwine::Application.routes.draw do
 
-#resources :vineyards
+  resources :subscriptions, :only => [:new, :create]
+
+resources :vineyards
 resources :users do
   resources :wines
 end
