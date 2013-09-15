@@ -1,5 +1,7 @@
 Whichwine::Application.routes.draw do
 
+  resources :memories
+
   resources :subscriptions, :only => [:new, :create]
 
 resources :vineyards

@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130914215146) do
+ActiveRecord::Schema.define(version: 20130915061535) do
+
+  create_table "memories", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "address"
+  end
 
   create_table "subscriptions", force: true do |t|
     t.string   "email"

@@ -1,6 +1,13 @@
+<div class="container">
 <h3>Edit User</h3>
- 
+
+<%= @user.name %> 
+<%= @user.created_at %>
+<%= @user.provider %>
+
 <%= form_for :user, url: user_path(@user.id), method: :patch do |f| %>
+
+<!--if errors exist when saving -->
   <% if @user.errors.any? %>
   <div id="errorExplanation">
     <h2><%= pluralize(@user.errors.count, "error") %> prohibited
@@ -12,10 +19,6 @@
     </ul>
   </div>
   <% end %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
  
   <p>
     <%= f.label :email %><br>
@@ -30,3 +33,4 @@
 <% end %>
  
 <%= link_to 'Back', user_path %>
+</div>

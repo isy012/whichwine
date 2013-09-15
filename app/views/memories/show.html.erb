@@ -1,0 +1,25 @@
+<div class="container">
+	<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @memory.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @memory.description %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @memory.address %>
+</p>
+
+<br>
+<iframe width="400" height="400" frameborder="1" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?q=<%= @memory.address %>&amp;output=embed"></iframe>
+
+</div>
+
+<%= link_to 'Edit', edit_memory_path(@memory) %> |
+<%= link_to 'Back', memories_path %>
